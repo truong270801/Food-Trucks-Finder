@@ -17,21 +17,23 @@
     <div class="left-panel">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Food Trucks Finder <i class="fa-solid fa-xmark" style="float: right;" onclick="closePanel()"></i></i></h4>
-          <p >Nhập bán kính:  <input type="number" id="radius" min="0" step="1"  value="0"> Km</p>
-          <button class ="btn-radius" onclick="FoodTruckFinder()">TÌM XE</button>
-          <div class="result"></div>
+          <h4 class="card-title"><b>Food Trucks Finder</b> <i class="fa-solid fa-xmark" style="float: right;" onclick="closePanel()"></i></i></h4>
         </div>
       </div>
+      <div class="content">
+        <b >Nhập bán kính:  <input type="number" id="radius" min="0" step="0.1"  value="0"> Km</b>
+       
+  
+       <button class ="btn-search" onclick="FoodTruckFinder()">TÌM XE</button>
+      </div>
+     
     </div>
 
     <div id='map'></div>
-    <form class="search-form">
+    
+   
       <div class="open-panel" onclick="openPanel()"><i class="fa-sharp fa-solid fa-bars"></i></div>
-      <input type="text" id="search-box" placeholder="Search anything here....">
-      <button>Search</button>
-    </form>
-    <div id="search-result"></div>
+   
   
 </div>
   <script src="app.js"></script>
