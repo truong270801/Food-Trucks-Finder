@@ -188,8 +188,83 @@ Sắp xếp hợp nhất là một ví dụ hoàn hảo về việc áp dụng t
 - Sắp xếp tùy chỉnh
 - Vấn đề đếm đảo ngược
 
-> Hãy viết mã:
+Hãy viết mã:
+```
+class Merge {  
+  
+    void merge(int a[], int beg, int mid, int end){  
+  
+        int i, j, k;  
+        int n1 = mid - beg + 1;    
+        int n2 = end - mid;    
+        int LeftArray[] = new int[n1];  
+        int RightArray[] = new int[n2];  
+       
+        for (i = 0; i < n1; i++)    
+            LeftArray[i] = a[beg + i];    
+        for (j = 0; j < n2; j++)    
+            RightArray[j] = a[mid + 1 + j];    
+      
+        i = 0;  
+        j = 0; 
+        k = beg;  
+      
+        while (i < n1 && j < n2){    
+            if(LeftArray[i] <= RightArray[j]){    
+                a[k] = LeftArray[i];    
+                i++; 
+            } else {    
+                a[k] = RightArray[j];    
+                j++; 
+            }    
+            k++;     
+        }    
+      
+        while (i < n1){    
+            a[k] = LeftArray[i];    
+            i++;    
+            k++;  
+        }    
+      
+        while (j < n2){    
+            a[k] = RightArray[j];    
+            j++;    
+            k++; 
+        }    
+    }    
+  
+    void mergeSort(int a[], int beg, int end){  
+        if (beg < end){  
+            int mid = (beg + end) / 2;  
+            mergeSort(a, beg, mid);  
+            mergeSort(a, mid + 1, end);  
+            merge(a, beg, mid, end);  
+        }  
+    }  
+  
+    void printArray(int a[], int n){  
+        int i;  
+        for (i = 0; i < n; i++)  
+            System.out.print(a[i] + " "); 
+    }  
+  
+    public static void main(String args[]){  
+        int a[] = { 11, 30, 24, 7, 31, 16, 39, 41 };  
+        int n = a.length;  
+        Merge m1 = new Merge();  
+        System.out.println("\nBefore sorting array elements are - ");  
+        m1.printArray(a, n);  
+        m1.mergeSort(a, 0, n - 1);  
+        System.out.println("\nAfter sorting array elements are - ");  
+        m1.printArray(a, n);  
+        System.out.println("");  
+    }  
+}  
+}
 
+
+view rawmergeSort.java hosted with ❤ by GitHub
+```
 # ***Sắp xếp nhanh chóng***
 
 Quicksort là thuật toán sắp xếp quan trọng khác dựa trên phương pháp chia để trị. Không giống như mergesort chia các phần tử đầu vào theo vị trí của chúng trong mảng, quicksort chia chúng theo giá trị của chúng.
@@ -203,6 +278,61 @@ Quá trình quan trọng trong “ **Sắp xếp nhanh”** là một **phân v�
 ![](https://miro.medium.com/v2/resize:fit:700/1*JmN_W3YsY51MTmJ9z-RyqQ.png)
 
 > Hãy viết mã:
+```
+import java.util.Arrays;
+
+class Quicksort {
+  
+  static int partition(int array[], int low, int high) {
+    
+    int pivot = array[high];
+    int i = (low - 1);
+
+    for (int j = low; j < high; j++) {
+      if (array[j] <= pivot) {
+        i++;
+        
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+    
+    int temp = array[i + 1];
+    array[i + 1] = array[high];
+    array[high] = temp;
+    
+    return (i + 1);
+  }
+
+  static void quickSort(int array[], int low, int high) {
+    if (low < high) {
+      
+      int pi = partition(array, low, high);
+     
+      quickSort(array, low, pi - 1);
+      quickSort(array, pi + 1, high);
+    }
+  }
+}
+
+class Main {
+  public static void main(String args[]) {
+
+    int[] data = { 8, 7, 2, 1, 0, 9, 6 };
+    System.out.println("Unsorted Array");
+    System.out.println(Arrays.toString(data));
+
+    int size = data.length;
+
+    Quicksort.quickSort(data, 0, size - 1);
+
+    System.out.println("Sorted Array in Ascending Order: ");
+    System.out.println(Arrays.toString(data));
+  }
+}
+view rawquickSort.java hosted with ❤ by GitHub
+```
 
 # Cây nhị phân
 
@@ -356,6 +486,39 @@ Giả sử chúng ta đang cố gắng sắp xếp các phần tử theo **thứ
 ![](https://miro.medium.com/v2/resize:fit:688/1*D7DbcPd7GueFWC6QptjJ7w.png)
 
 > Hãy mã…
+```
+import java.util.Arrays;
+
+class Main {
+  static void bubbleSort(int array[]) {
+    
+    int size = array.length;
+    int temp;
+    
+    for (int i = 0; i < size - 1; i++)
+
+      for (int j = 0; j < size - i - 1; j++)
+
+        if (array[j] > array[j + 1]) {
+
+          temp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = temp;
+        }
+  }
+
+  public static void main(String args[]) {
+      
+    int[] data = { -6, 47, 0, 18, -8 };
+   
+    Main.bubbleSort(data);
+    
+    System.out.println("Sorted Array in Ascending Order:");
+    System.out.println(Arrays.toString(data));
+  }
+}
+view rawbubbleSort.java hosted with ❤ by GitHub
+```
 
 Trong thuật toán trên, tất cả các so sánh được thực hiện ngay cả khi mảng đã được sắp xếp!
 
@@ -390,6 +553,37 @@ Sắp xếp lựa chọn là một thuật toán sắp xếp chọn phần tử 
 - Đối với mỗi lần lặp, việc lập chỉ mục bắt đầu từ phần tử chưa được sắp xếp đầu tiên. Các bước từ 1 đến 3 được lặp lại cho đến khi tất cả các phần tử được đặt vào đúng vị trí của chúng.
 
 > Hãy mã hóa…
+```
+import java.util.Arrays;
+
+class SelectionSort {
+  void selectionSort(int array[]) {
+    int size = array.length;
+
+    for (int step = 0; step < size - 1; step++) {
+      int min_idx = step;
+
+      for (int i = step + 1; i < size; i++) {
+
+        if (array[i] < array[min_idx]) {
+          min_idx = i;
+        }
+      }
+      int temp = array[step];
+      array[step] = array[min_idx];
+      array[min_idx] = temp;
+    }
+  }
+  public static void main(String args[]) {
+    int[] data = { 28, 16, 11, 18, 6 };
+    SelectionSort ss = new SelectionSort();
+    ss.selectionSort(data);
+    System.out.println("Sorted Array in Ascending Order: ");
+    System.out.println(Arrays.toString(data));
+  }
+}
+view rawselectionSort.java hosted with ❤ by GitHub
+```
 
 # Tìm kiếm theo chiều rộng
 
