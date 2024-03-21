@@ -8,21 +8,11 @@
 
 [Theo](/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fsubscribe%2Fuser%2Ff80529ce9b6c&operation=register&redirect=https%3A%2F%2Fmedium.com%2F%40zehragokce%2Fa-journey-through-the-world-of-algorithms-554bfffcee97&user=Zehra%20G%C3%B6k%C3%A7e%20Aynac%C4%B1&userId=f80529ce9b6c&source=post_page-f80529ce9b6c----554bfffcee97---------------------post_header-----------)
 
-đọc 13 phút
-
-·
-
 Ngày 13 tháng 3 năm 2024
 
-309
-
-1
 
 [Nghe](/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2Fplans%3Fdimension%3Dpost_audio_button%26postId%3D554bfffcee97&operation=register&redirect=https%3A%2F%2Fmedium.com%2F%40zehragokce%2Fa-journey-through-the-world-of-algorithms-554bfffcee97&source=-----554bfffcee97---------------------post_audio_button-----------)
 
-Chia sẻ
-
-Chia sẻ
 
 Đã lâu rồi tôi mới viết một bài báo và bài viết hôm nay sẽ tập trung vào các thuật toán thường xuyên khiến chúng tôi đau đầu. Tôi dự định thu thập một bản tóm tắt thông tin thuật toán nhiều nhất mà tôi đã đọc và nghiên cứu. Nó sẽ hơi dài một chút nhưng tôi rất vui được cùng bạn tìm hiểu sâu về nó.
 
@@ -39,7 +29,6 @@ Chia sẻ
 - Chiến lược tìm kiếm thuật toán
 - Ví dụ về một số thuật toán nổi tiếng
 
-> Lấy cà phê của bạn và bắt đầu bài viết này.
 
 # **Thuật toán**
 
@@ -609,6 +598,4 @@ Tìm kiếm theo chiều sâu hoặc Truyền tải theo chiều sâu là một 
 
 [https://en.m.wikipedia.org/wiki/File:Depth-First-Search.gif](https://en.m.wikipedia.org/wiki/File:Depth-First-Search.gif)
 
-> Là một sinh viên đại học, tôi cố gắng viết bằng cách phân tích những gì tôi đã học được từ những bài học đã học và những điều tôi tò mò. Tôi tin rằng tôi đã thu thập được nhiều kiến ​​thức hơn. Hãy chia sẻ ý kiến ​​​​của bạn dưới đây.
-
-## PS Freeform được sử dụng để tạo tất cả hình ảnh mà tôi không tham khảo.
+## Bài dịch 
